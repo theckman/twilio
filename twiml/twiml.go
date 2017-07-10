@@ -36,7 +36,9 @@ func EncodeResponse(w io.Writer, r *Response) error {
 	encoder.Indent("", "  ")
 
 	// write the xml header to the buffer
-	w.Write(xmlHeader)
+	if _, err := w.Write(xmlHeader); err != nil {
+		return err
+	}
 
 	// encode the *Response in to XML and write it to the buffer
 	if err := encoder.Encode(r); err != nil {
