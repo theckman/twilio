@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial hangupOnStar="false" answerOnBridge="false">
+    <Sip username="testUser" password="testPass" url="https://example.org/url" method="POST" statusCallbackEvent="initiated ringing answered completed" statusCallback="https://example.org/scb" statusCallbackMethod="POST" timeout="42" hangupOnStar="true" timeLimit="84" callerId="theckman" record="record-from-ringing-dual" trim="trim-silence" recordingStatusCallback="https://example.org/rscb" recordingStatusCallbackMethod="POST" answerOnBridge="true" ringTone="jp">Testing</Sip>
+  </Dial>
+</Response>

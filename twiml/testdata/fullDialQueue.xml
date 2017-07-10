@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial hangupOnStar="false" answerOnBridge="false">
+    <Queue url="https://example.org/url" method="POST" reservationSid="reservationSid" postWorkActivitySid="postWorkActivitySid">Testing</Queue>
+  </Dial>
+</Response>

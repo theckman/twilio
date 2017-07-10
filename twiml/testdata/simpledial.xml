@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial hangupOnStar="false" answerOnBridge="false">415-555-5555</Dial>
+</Response>

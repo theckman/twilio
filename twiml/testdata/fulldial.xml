@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial action="https://example.org/action" method="POST" timeout="5" hangupOnStar="true" timeLimit="10" callerId="+14155555555" record="record-from-ringing-dual" trim="trim-silence" recordingStatusCallback="https://example.org/rsc" recordingStatusCallbackMethod="POST" answerOnBridge="true" ringTone="us-old">415-555-5555</Dial>
+</Response>

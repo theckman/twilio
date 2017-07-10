@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial hangupOnStar="false" answerOnBridge="false">
+    <Client url="https://example.org/url" method="POST" statusCallbackEvent="initiated ringing answered completed" statusCallback="https://example.org/scb" statusCallbackMethod="POST">Testing</Client>
+  </Dial>
+</Response>

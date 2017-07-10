@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Sms to="+14155555555" from="+14155555656" action="https://example.org/action" method="POST" statusCallback="https://example.org/scb">Test message!</Sms>
+</Response>
