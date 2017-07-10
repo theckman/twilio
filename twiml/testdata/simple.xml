@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>Testing!</Say>
+  <Record transcribe="false"></Record>
+  <Reject></Reject>
+  <Hangup></Hangup>
+  <Play>https://example.org/audio.mp3</Play>
+  <Pause></Pause>
+  <Sms>Test message!</Sms>
+  <Redirect>https://example.org/redirect</Redirect>
+  <Leave></Leave>
+  <Enqueue>test</Enqueue>
+  <Gather></Gather>
+  <Dial hangupOnStar="false" answerOnBridge="false">415-555-5555</Dial>
+  <Say>Goodbye!</Say>
+</Response>

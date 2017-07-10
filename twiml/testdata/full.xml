@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say language="en-US" loop="2" voice="alice">Testing!</Say>
+  <Record action="https://example.org/action" method="POST" timeout="3" finishOnKey="1234567890*#" maxLength="350" playBeep="true" trim="trim-silence" recordingStatusCallback="https://example.org/rsc" recordingStatusCallbackMethod="POST" transcribe="true" transcribeCallback="https://example.org/tc"></Record>
+  <Reject reason="rejected"></Reject>
+  <Hangup></Hangup>
+  <Play loop="2" digits="0w42*">https://example.org/audio.mp3</Play>
+  <Pause length="4"></Pause>
+  <Sms to="+14155555555" from="+14155555656" action="https://example.org/action" method="POST" statusCallback="https://example.org/scb">Test message!</Sms>
+  <Redirect method="POST">https://example.org/redirect</Redirect>
+  <Leave></Leave>
+  <Enqueue action="https://example.org/action" method="POST" waitUrl="https://example.org/wait" waitUrlMethod="GET" workflowSid="WWtesting">test</Enqueue>
+  <Gather input="dtmf speech" action="https://example.org/action" method="POST" timeout="5" finishOnKey="*#" numDigits="42" partialResultCallback="https://example.org/prc" partialResultCallbackMethod="POST" language="en-US" hints="bacon ipsum, other stuff" bargeIn="false"></Gather>
+  <Dial action="https://example.org/action" method="POST" timeout="5" hangupOnStar="true" timeLimit="10" callerId="+14155555555" record="record-from-ringing-dual" trim="trim-silence" recordingStatusCallback="https://example.org/rsc" recordingStatusCallbackMethod="POST" answerOnBridge="true" ringTone="us-old">415-555-5555</Dial>
+  <Say language="en-AU" loop="3" voice="alice">Goodbye!</Say>
+</Response>

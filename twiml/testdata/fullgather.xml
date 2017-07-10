@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Gather input="dtmf speech" action="https://example.org/action" method="POST" timeout="5" finishOnKey="*#" numDigits="42" partialResultCallback="https://example.org/prc" partialResultCallbackMethod="POST" language="en-US" hints="bacon ipsum, other stuff" bargeIn="false"></Gather>
+</Response>

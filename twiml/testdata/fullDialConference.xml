@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Dial hangupOnStar="false" answerOnBridge="false">
+    <Conference muted="true" beep="true" startConferenceOnEnter="true" endConferenceOnExit="true" waitUrl="https://example.org/wait" waitMethod="POST" maxParticipants="42" record="record-from-start" region="jp1" trim="trim-silence" whisper="testWhisper" statusCallbackEvent="start end join leave mute hold speaker" statusCallbackMethod="POST" recordingStatusCallback="https://example.org/rsc" recordingStatusCallbackMethod="POST">testConf</Conference>
+  </Dial>
+</Response>
