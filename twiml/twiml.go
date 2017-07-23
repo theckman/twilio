@@ -11,6 +11,8 @@ import (
 	"encoding/xml"
 	"io"
 	"sync"
+
+	"github.com/pkg/errors"
 )
 
 var bufferPool = sync.Pool{
@@ -29,6 +31,8 @@ type Response struct {
 }
 
 // EncodeResponse takes a *Response instance and encodes it, writing it to w.
+// This function returns a wrapped error (see package documentation for more
+// info).
 func EncodeResponse(w io.Writer, r *Response) error {
 	// get a new XML encoder for writing to the buffer
 	// enable indenting of output
@@ -37,18 +41,20 @@ func EncodeResponse(w io.Writer, r *Response) error {
 
 	// write the xml header to the buffer
 	if _, err := w.Write(xmlHeader); err != nil {
-		return err
+		return errors.Wrap(err, "writing XML header failed")
 	}
 
 	// encode the *Response in to XML and write it to the buffer
 	if err := encoder.Encode(r); err != nil {
-		return err
+		return errors.Wrap(err, "encoding XML document failed")
 	}
 
 	return nil
 }
 
 // MarshalResponse takes a *Response instance and renders it to XML.
+// This function returns a wrapped error (see package documentation for more
+// info).
 func MarshalResponse(r *Response) ([]byte, error) {
 	// get a new *bytes.Buffer from the pool
 	buf := bufferPool.Get().(*bytes.Buffer)
@@ -59,7 +65,7 @@ func MarshalResponse(r *Response) ([]byte, error) {
 	defer buf.Reset()
 
 	if err := EncodeResponse(buf, r); err != nil {
-		return nil, err
+		return nil, errors.Wrap(err, "encoding response failed")
 	}
 
 	// copy the byte slice from the *bytes.Buffer as any changes to the buffer
@@ -71,13 +77,15 @@ func MarshalResponse(r *Response) ([]byte, error) {
 }
 
 // EncodeSlice takes a []inteface{}, allocates a *Response instances, and
-// encodes it to w.
+// encodes it to w. This function returns a wrapped error (see package
+// documentation for more info).
 func EncodeSlice(w io.Writer, s []interface{}) error {
 	return EncodeResponse(w, &Response{Verbs: s})
 }
 
 // MarshalSlice takes a []interface{}, allocates a *Response instance, and calls
-// MarshalResponse with it.
+// MarshalResponse with it. This function returns a wrapped error (see package
+// documentation for more info).
 func MarshalSlice(s []interface{}) ([]byte, error) {
 	return MarshalResponse(&Response{Verbs: s})
 }
