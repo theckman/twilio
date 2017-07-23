@@ -34,6 +34,11 @@
 // functions to work with slices of verbs instead of a full instance of
 // *Response.
 //
+// Error handling in this package are wrapped errors, using the
+// github.com/pkg/errors package by Dave Cheney. More information about that
+// package and how to unwrap errors can be found here:
+// https://godoc.org/github.com/pkg/errors
+//
 // Here is a simple example of using EncodeResponse():
 //
 // 		buf := &bytes.Buffer{}
